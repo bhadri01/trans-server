@@ -13,7 +13,9 @@ const supportedLanguages = {
     zh: 'Chinese',
     // Add more languages as needed
 };
-
+app.get('/', (req, res) => {
+    res.json({ message: "wello server", status: 200 });
+});
 app.post('/translate', (req, res) => {
     const { text, from = 'auto', to = 'es' } = req.body;
     if (text && to) {
