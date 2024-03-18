@@ -15,7 +15,7 @@ const supportedLanguages = {
 };
 
 router.get('/', (req, res) => res.send("Welcome to the root"));
-app.post('/translate', (req, res) => {
+router.post('/translate', (req, res) => {
     const { text, from = 'auto', to = 'es' } = req.body;
     if (text && to) {
         translate(text, {
@@ -33,7 +33,7 @@ app.post('/translate', (req, res) => {
     }
 });
 
-app.get('/lang', (req, res) => {
+router.get('/lang', (req, res) => {
     res.json(supportedLanguages);
 });
 // Use the router on a specific path. If you want this to be the root, adjust accordingly.
