@@ -14,6 +14,9 @@ const supportedLanguages = {
     // Add more languages as needed
 };
 
+// Parse JSON bodies (as sent by API clients)
+app.use(express.json());
+
 router.get('/', (req, res) => res.send("Welcome to the root"));
 router.post('/translate', (req, res) => {
     const { text, from = 'auto', to = 'es' } = req.body;
